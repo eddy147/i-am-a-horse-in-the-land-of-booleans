@@ -2,25 +2,36 @@
   (:refer-clojure :exclude [boolean]))
 
 (defn boolean [x]
-  ":(")
+  (if x true false))
 
 (defn abs [x]
-  ":(")
+  (if (< x 0)
+    (* -1 x)
+    x))
 
 (defn divides? [divisor n]
-  ":(")
+  (= 0 (mod n divisor)))
 
 (defn fizzbuzz [n]
-  ":(")
+  (cond
+    (0 = mod n 15) "gotcha!"
+    (0 = mod n 3) "fizz"
+    (0 = mod n 5) "buzz"
+    :else ""))
 
 (defn teen? [age]
-  ":(")
+  (and (< age 20) (> age 12)))
 
 (defn not-teen? [age]
   ":(")
 
 (defn generic-doublificate [x]
-  ":(")
+  (cond
+    (number? x) (* x 2)
+    (empty? x) nil
+    (or (list? x) (vector? x)) (* 2 (count x))
+    :else true
+    ))
 
 (defn leap-year? [year]
   ":(")
