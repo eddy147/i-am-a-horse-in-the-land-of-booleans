@@ -10,7 +10,7 @@
     x))
 
 (defn divides? [divisor n]
-  (= 0 (mod n divisor)))
+  (zero? (mod n divisor)))
 
 (def fizz? #(zero? (mod % 3)))
 (def buzz? #(zero? (mod % 5)))
@@ -37,6 +37,11 @@
     :else true))
 
 (defn leap-year? [year]
-  "fix me")
+  (cond
+    (not (divides? 4 year)) false
+    (not (divides? 100 year)) true
+    (not (divides? 400 year)) false
+    :else true))
 
-; '_______'
+
+;'_______'
